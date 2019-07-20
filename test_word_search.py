@@ -4,8 +4,7 @@ from word_search import WordSearch
 
 class TestWordSearch(unittest.TestCase):
 
-    def setUp(self):
-        self.ws = WordSearch("test_puzzle.txt")
+    ws = WordSearch("test_puzzle.txt")
 
     def testIfPuzzleDataWasExtractedFromFile(self):
         expected_words = ["APE","ART","AIR","ANT","AXE","ACE","ALE","ARK"]
@@ -17,6 +16,11 @@ class TestWordSearch(unittest.TestCase):
 
         self.assertListEqual(self.ws.words, expected_words)
         self.assertListEqual(self.ws.board, expected_board)
+
+    def testIfPuzzleBoardIsSquare(self):
+        board_row_len = len(self.ws.board)
+        board_col_len = len(self.ws.board[0])
+        self.assertEqual(board_row_len, board_col_len)
 
 if __name__ == '__main__':
     unittest.main()
