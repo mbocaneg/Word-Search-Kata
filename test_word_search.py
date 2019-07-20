@@ -22,5 +22,13 @@ class TestWordSearch(unittest.TestCase):
         board_col_len = len(self.ws.board[0])
         self.assertEqual(board_row_len, board_col_len)
 
+    def testFindWordNorth(self):
+        test_word = "APE"
+        expected_output = [[2,2], [2,1], [2,0]]
+
+        self.ws.solve_puzzle()
+        actual_output = self.ws.answers["APE"]
+        self.assertListEqual(actual_output, expected_output)
+
 if __name__ == '__main__':
     unittest.main()
