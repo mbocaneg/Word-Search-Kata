@@ -27,7 +27,17 @@ class TestWordSearch(unittest.TestCase):
         expected_output = [[2,2], [2,1], [2,0]]
 
         self.ws.solve_puzzle()
-        actual_output = self.ws.answers["APE"]
+        actual_output = self.ws.answers[test_word]
+
+        self.assertListEqual(actual_output, expected_output)
+
+    def testFindWordSouth(self):
+        test_word = "AXE"
+        expected_output = [[2,2], [2,3], [2,4]]
+
+        self.ws.solve_puzzle()
+        actual_output = self.ws.answers[test_word]
+        
         self.assertListEqual(actual_output, expected_output)
 
 if __name__ == '__main__':

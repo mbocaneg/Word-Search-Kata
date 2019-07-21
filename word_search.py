@@ -22,16 +22,30 @@ class WordSearch:
             for y, row in enumerate(self.board):
                 for x, col in enumerate(row):
                     self.find_word_north(word, y, x)
+                    self.find_word_south(word, y, x)
 
     def find_word_north(self, word, y, x):
         if(y == 0 ):
             return
 
         coordinates = []
-        
+
         for i, char in enumerate(word):
             if(self.board[y - i][x] == char):
                 coordinates.append([x, y - i])
+
+        if len(coordinates) == len(word):
+            self.answers[word] = coordinates
+
+    def find_word_south(self, word, y, x):
+        if(y == self.dims or y + len(word) > self.dims):
+            return
+
+        coordinates = []
+        
+        for i, char in enumerate(word):
+            if(self.board[y + i][x] == char):
+                coordinates.append([x, y + i])
 
         if len(coordinates) == len(word):
             self.answers[word] = coordinates
