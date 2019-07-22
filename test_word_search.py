@@ -5,6 +5,7 @@ from word_search import WordSearch
 class TestWordSearch(unittest.TestCase):
 
     ws = WordSearch("test_puzzle.txt")
+    ws.solve_puzzle()
 
     def testIfPuzzleDataWasExtractedFromFile(self):
         expected_words = ["APE","ART","AIR","ANT","AXE","ACE","ALE","ARK"]
@@ -26,7 +27,7 @@ class TestWordSearch(unittest.TestCase):
         test_word = "APE"
         expected_output = [[2,2], [2,1], [2,0]]
 
-        self.ws.solve_puzzle()
+        # self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
 
         self.assertListEqual(actual_output, expected_output)
@@ -35,7 +36,7 @@ class TestWordSearch(unittest.TestCase):
         test_word = "AXE"
         expected_output = [[2,2], [2,3], [2,4]]
 
-        self.ws.solve_puzzle()
+        # self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
         
         self.assertListEqual(actual_output, expected_output)
@@ -44,7 +45,7 @@ class TestWordSearch(unittest.TestCase):
         test_word = "AIR"
         expected_output = [[2,2], [3,2], [4,2]]
 
-        self.ws.solve_puzzle()
+        # self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
         
         self.assertListEqual(actual_output, expected_output)
@@ -53,7 +54,7 @@ class TestWordSearch(unittest.TestCase):
         test_word = "ALE"
         expected_output = [[2,2], [1,2], [0,2]]
 
-        self.ws.solve_puzzle()
+        # self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
         
         self.assertListEqual(actual_output, expected_output)
@@ -62,7 +63,7 @@ class TestWordSearch(unittest.TestCase):
         test_word = "ART"
         expected_output = [[2,2], [3,1], [4,0]]
 
-        self.ws.solve_puzzle()
+        # self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
         
         self.assertListEqual(actual_output, expected_output)
@@ -71,7 +72,7 @@ class TestWordSearch(unittest.TestCase):
         test_word = "ANT"
         expected_output = [[2,2], [3,3], [4,4]]
 
-        self.ws.solve_puzzle()
+        # self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
         
         self.assertListEqual(actual_output, expected_output)
@@ -80,7 +81,7 @@ class TestWordSearch(unittest.TestCase):
         test_word = "ACE"
         expected_output = [[2,2], [1,3], [0,4]]
 
-        self.ws.solve_puzzle()
+        # self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
         
         self.assertListEqual(actual_output, expected_output)
@@ -89,7 +90,7 @@ class TestWordSearch(unittest.TestCase):
         test_word = "ARK"
         expected_output = [[2,2], [1,1], [0,0]]
 
-        self.ws.solve_puzzle()
+        # self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
         
         self.assertListEqual(actual_output, expected_output)

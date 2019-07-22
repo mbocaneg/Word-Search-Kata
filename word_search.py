@@ -21,6 +21,7 @@ class WordSearch:
     words = []
     answers = {}
     dims = 0
+    directions = [[-1, 0], [-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1]]
 
 
     def __init__(self, filename):
@@ -80,14 +81,37 @@ class WordSearch:
                     # try to find words in the:
                     # north, south, east, west, northeast, southeast, southwest,
                     # and northwest directions 
-                    self.find_word_north(word, y, x)
-                    self.find_word_south(word, y, x)
-                    self.find_word_east(word, y, x)
-                    self.find_word_west(word, y, x)
-                    self.find_word_northeast(word, y, x)
-                    self.find_word_southeast(word, y, x)
-                    self.find_word_southwest(word, y, x)
-                    self.find_word_northwest(word, y, x)
+
+                    # self.find_word_north(word, y, x)
+                    # self.find_word_south(word, y, x)
+                    # self.find_word_east(word, y, x)
+                    # self.find_word_west(word, y, x)
+                    # self.find_word_northeast(word, y, x)
+                    # self.find_word_southeast(word, y, x)
+                    # self.find_word_southwest(word, y, x)
+                    # self.find_word_northwest(word, y, x)
+                    
+                    for dir in self.directions:
+                        self.scan_word(word, y, x, dir)
+
+    def print_solutions(self):
+        for word in self.answers:
+            print(word)
+            print(*self.answers[word])
+
+    def scan_word(self, word, y, x, direction):
+        y_offset, x_offset = direction
+        coordinates = []
+        for i, char in enumerate(word):
+            x_i = x + i * x_offset
+            y_i = y + i * y_offset
+
+            if(x_i < 0 or x_i >= self.dims or y_i < 0 or y_i >= self.dims):
+                return
+            if(self.board[y_i][x_i] == char):
+                coordinates.append([x_i, y_i])
+        if(len(coordinates) == len(word)):
+            self.answers[word] = coordinates
 
 
     def find_word_north(self, word, y, x):
@@ -410,4 +434,3 @@ class WordSearch:
 
             # ...so add the word and its coordinates to the answers dictionary
             self.answers[word] = coordinates
-
