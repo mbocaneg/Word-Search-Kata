@@ -67,5 +67,14 @@ class TestWordSearch(unittest.TestCase):
         
         self.assertListEqual(actual_output, expected_output)
 
+    def testFindWordSouthEast(self):
+        test_word = "ANT"
+        expected_output = [[2,2], [3,3], [4,4]]
+
+        self.ws.solve_puzzle()
+        actual_output = self.ws.answers[test_word]
+        
+        self.assertListEqual(actual_output, expected_output)
+
 if __name__ == '__main__':
     unittest.main()
