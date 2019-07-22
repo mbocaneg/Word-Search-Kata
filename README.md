@@ -21,7 +21,7 @@ The actual solution logic is ran as follows:
 ```
 python3 main.py <puzzle-filename.txt>
 ```
-where an optional arguments, `<puzzle-filename.txt>`, denotes the name of a txt file that
+where an optional argument, `<puzzle-filename.txt>`, denotes the name of a txt file that
 contains a word search puzzle, as described in the original problem statement. If no
 argument is given, then the application defaults to using the txt file `star_trek.txt` as
 in the original problem statement. An additional puzzle file, `pokemon.txt` was added for
