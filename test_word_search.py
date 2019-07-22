@@ -40,9 +40,18 @@ class TestWordSearch(unittest.TestCase):
         
         self.assertListEqual(actual_output, expected_output)
 
-    def testFindWordEast(self):
+    def testFindWordWest(self):
         test_word = "AIR"
         expected_output = [[2,2], [3,2], [4,2]]
+
+        self.ws.solve_puzzle()
+        actual_output = self.ws.answers[test_word]
+        
+        self.assertListEqual(actual_output, expected_output)
+
+    def testFindWordEast(self):
+        test_word = "ALE"
+        expected_output = [[2,2], [1,2], [0,2]]
 
         self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
