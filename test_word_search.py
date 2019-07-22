@@ -85,5 +85,14 @@ class TestWordSearch(unittest.TestCase):
         
         self.assertListEqual(actual_output, expected_output)
 
+    def testFindWordNorthWest(self):
+        test_word = "ARK"
+        expected_output = [[2,2], [1,1], [0,0]]
+
+        self.ws.solve_puzzle()
+        actual_output = self.ws.answers[test_word]
+        
+        self.assertListEqual(actual_output, expected_output)
+
 if __name__ == '__main__':
     unittest.main()
