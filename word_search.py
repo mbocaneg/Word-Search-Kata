@@ -71,38 +71,22 @@ class WordSearch:
         """
 
         # for each word in the words list
+        # ...for each row in the game board
+        # ......for each column in each row
         for word in self.words:
-
-            # ...for each row in the game board
             for y, row in enumerate(self.board):
-
-                # ...for each column in each row
                 for x, col in enumerate(row):
 
                     # try to find words in the:
-
-                    # north direction
+                    # north, south, east, west, northeast, southeast, southwest,
+                    # and northwest directions 
                     self.find_word_north(word, y, x)
-
-                    # south direction
                     self.find_word_south(word, y, x)
-
-                    # east direction
                     self.find_word_east(word, y, x)
-
-                    # west direction
                     self.find_word_west(word, y, x)
-
-                    # northeast direction
                     self.find_word_northeast(word, y, x)
-
-                    # southeast direction
                     self.find_word_southeast(word, y, x)
-
-                    # southwest direction
                     self.find_word_southwest(word, y, x)
-
-                    # northwest direction
                     self.find_word_northwest(word, y, x)
 
 
@@ -130,13 +114,12 @@ class WordSearch:
         # initialize an empty list of coordinates for the potential word location
         coordinates = []
 
-        # for each character in the word
+        # for each character in the word, if the character on the board at position 
+        # {y-i, x} equals the current character of the word, append the coordinates 
+        # of this character to the coordinates list
+
         for i, char in enumerate(word):
-
-            # if the character on the board at position {y-i, x} equals the current character of the word
             if(self.board[y - i][x] == char):
-
-                # append the coordinates of this character to the coordinates list
                 coordinates.append([x, y - i])
 
         # if the length of the coordinates list equals the length of the word, then
@@ -172,13 +155,11 @@ class WordSearch:
         # initialize an empty list of coordinates for the potential word location
         coordinates = []
         
-        # for each character in the word
+        # for each character in the word, if the character on the board at 
+        # position {y+i, x} equals the current character of the word
+        # append the coordinates of this character to the coordinates list
         for i, char in enumerate(word):
-
-            # if the character on the board at position {y+i, x} equals the current character of the word
             if(self.board[y + i][x] == char):
-
-                # append the coordinates of this character to the coordinates list
                 coordinates.append([x, y + i])
 
         # if the length of the coordinates list equals the length of the word, then
@@ -214,13 +195,11 @@ class WordSearch:
         # initialize an empty list of coordinates for the potential word location
         coordinates = []
         
-        # for each character in the word
+        # for each character in the word, if the character on the board at 
+        # position {y, x+i} equals the current character of the word
+        # append the coordinates of this character to the coordinates list
         for i, char in enumerate(word):
-
-            # if the character on the board at position {y, x+i} equals the current character of the word
             if(self.board[y][x + i] == char):
-
-                # append the coordinates of this character to the coordinates list
                 coordinates.append([x + i, y])
 
         # if the length of the coordinates list equals the length of the word, then
@@ -256,13 +235,11 @@ class WordSearch:
         # initialize an empty list of coordinates for the potential word location
         coordinates = []
         
-        # for each character in the word
+        # for each character in the word, if the character on the board at 
+        # position {y, x-i} equals the current character of the word
+        # append the coordinates of this character to the coordinates list
         for i, char in enumerate(word):
-
-            # if the character on the board at position {y, x-i} equals the current character of the word
             if(self.board[y][x - i] == char):
-
-                # append the coordinates of this character to the coordinates list
                 coordinates.append([x - i, y])
 
         # if the length of the coordinates list equals the length of the word, then
@@ -298,13 +275,11 @@ class WordSearch:
         # initialize an empty list of coordinates for the potential word location
         coordinates = []
 
-        # for each character in the word
+        # for each character in the word, if the character on the board at 
+        # position {y-i, x+i} equals the current character of the word
+        # append the coordinates of this character to the coordinates list
         for i, char in enumerate(word):
-
-            # if the character on the board at position {y-i, x+i} equals the current character of the word
             if(self.board[y - i][x + i] == char):
-
-                # append the coordinates of this character to the coordinates list
                 coordinates.append([x + i, y - i])
 
         # if the length of the coordinates list equals the length of the word, then
@@ -313,6 +288,7 @@ class WordSearch:
 
             # ...so add the word and its coordinates to the answers dictionary
             self.answers[word] = coordinates
+
 
     def find_word_southeast(self, word, y, x):
         """Function that tries to find a single word in the southeast direction. If it is 
@@ -341,13 +317,11 @@ class WordSearch:
         # initialize an empty list of coordinates for the potential word location
         coordinates = []
 
-        # for each character in the word
+        # for each character in the word, if the character on the board at 
+        # position {y+i, x+i} equals the current character of the word
+        # append the coordinates of this character to the coordinates list
         for i, char in enumerate(word):
-
-            # if the character on the board at position {y+i, x+i} equals the current character of the word
             if(self.board[y + i][x + i] == char):
-
-                # append the coordinates of this character to the coordinates list
                 coordinates.append([x + i, y + i])
 
         # if the length of the coordinates list equals the length of the word, then
@@ -384,13 +358,11 @@ class WordSearch:
         # initialize an empty list of coordinates for the potential word location
         coordinates = []
 
-        # for each character in the word
+        # for each character in the word, if the character on the board at 
+        # position {y+i, x+i} equals the current character of the word
+        # append the coordinates of this character to the coordinates list
         for i, char in enumerate(word):
-
-            # if the character on the board at position {y+i, x+i} equals the current character of the word
             if(self.board[y + i][x - i] == char):
-
-                # append the coordinates of this character to the coordinates list
                 coordinates.append([x - i, y + i])
 
         # if the length of the coordinates list equals the length of the word, then
@@ -425,13 +397,11 @@ class WordSearch:
         # initialize an empty list of coordinates for the potential word location
         coordinates = []
 
-        # for each character in the word
+        # for each character in the word, if the character on the board at
+        # position {y-i, x-i} equals the current character of the word
+        # append the coordinates of this character to the coordinates list
         for i, char in enumerate(word):
-
-            # if the character on the board at position {y-i, x-i} equals the current character of the word
             if(self.board[y - i][x - i] == char):
-
-                # append the coordinates of this character to the coordinates list
                 coordinates.append([x - i, y - i])
 
         # if the length of the coordinates list equals the length of the word, then
