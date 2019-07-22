@@ -27,72 +27,56 @@ class TestWordSearch(unittest.TestCase):
         test_word = "APE"
         expected_output = [[2,2], [2,1], [2,0]]
 
-        # self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
-
         self.assertListEqual(actual_output, expected_output)
 
     def testFindWordSouth(self):
         test_word = "AXE"
         expected_output = [[2,2], [2,3], [2,4]]
 
-        # self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
-        
         self.assertListEqual(actual_output, expected_output)
 
     def testFindWordEast(self):
         test_word = "AIR"
         expected_output = [[2,2], [3,2], [4,2]]
 
-        # self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
-        
         self.assertListEqual(actual_output, expected_output)
 
     def testFindWordWest(self):
         test_word = "ALE"
         expected_output = [[2,2], [1,2], [0,2]]
 
-        # self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
-        
         self.assertListEqual(actual_output, expected_output)
 
     def testFindWordNorthEast(self):
         test_word = "ART"
         expected_output = [[2,2], [3,1], [4,0]]
 
-        # self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
-        
         self.assertListEqual(actual_output, expected_output)
 
     def testFindWordSouthEast(self):
         test_word = "ANT"
         expected_output = [[2,2], [3,3], [4,4]]
 
-        # self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
-        
         self.assertListEqual(actual_output, expected_output)
 
     def testFindWordSouthWest(self):
         test_word = "ACE"
         expected_output = [[2,2], [1,3], [0,4]]
 
-        # self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
-        
         self.assertListEqual(actual_output, expected_output)
 
     def testFindWordNorthWest(self):
         test_word = "ARK"
         expected_output = [[2,2], [1,1], [0,0]]
 
-        # self.ws.solve_puzzle()
         actual_output = self.ws.answers[test_word]
-        
         self.assertListEqual(actual_output, expected_output)
 
 if __name__ == '__main__':
